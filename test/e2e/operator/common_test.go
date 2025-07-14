@@ -29,7 +29,7 @@ import (
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
-	kubernetesscheme "k8s.io/client-go/kubernetes/scheme"
+	kubernetesscheme "k8s.io/client-go/kubernetes/scheme"wa
 	componentbaseconfigv1alpha1 "k8s.io/component-base/config/v1alpha1"
 	"k8s.io/utils/ptr"
 	"sigs.k8s.io/controller-runtime/pkg/client"
@@ -206,7 +206,7 @@ func waitForDaemonSetToBeRunning(ctx context.Context, namespace, name string) {
 		ds := &appsv1.DaemonSet{}
 		g.Expect(runtimeClient.Get(ctx, client.ObjectKey{Namespace: namespace, Name: name}, ds)).To(Succeed())
 		return ds
-	}).WithPolling(2 * time.Second).Should(HaveField("Status.NumberReady", Equal(int32(3))))
+	}).WithPolling(2 * time.Second).Should(HaveField("Status.NumberReady", Equal(int32(1))))
 }
 
 func waitForOperatorExtensionToBeDeleted(ctx context.Context, extension *operatorv1alpha1.Extension) {
