@@ -6,6 +6,7 @@ on:
 permissions: write-all
 jobs:
   run:
+    if: github.repository == 'gardener/gardener-extension-shoot-networking-filter'
     name: Run make tidy
     runs-on: ubuntu-latest
     steps:

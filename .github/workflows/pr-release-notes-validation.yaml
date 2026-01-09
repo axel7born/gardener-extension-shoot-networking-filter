@@ -11,6 +11,7 @@ permissions:
 
 jobs:
   validate-release-notes:
+    if: github.repository == 'gardener/gardener-extension-shoot-networking-filter'
     uses: gardener/cc-utils/.github/workflows/validate-release-notes.yaml@master
     permissions:
       pull-requests: read
